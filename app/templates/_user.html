@@ -1,0 +1,15 @@
+<table>
+    <tr>
+        <td width="70px">
+            <a href="{{ url_for('main.profile', username=user.username) }}">
+                <img src="{{ user.avatar(70) }}" />
+            </a>
+        </td>
+        <td>
+            <h1> &nbsp
+                <a href="{{ url_for('main.profile', username=user.username) }}">
+                    {{ user.username }}
+                </a></h1>
+        </td>
+    </tr>
+</table>

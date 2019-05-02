@@ -1,0 +1,24 @@
+<table>
+    <tr>
+        <td width="70px">
+            <a href="{{ url_for('main.profile', username=message.users[0].username) }}">
+                <img src="{{ message.users[0].avatar(70) }}" />
+            </a>
+        </td>
+        <td>&nbsp</td>
+        <td>
+                <a href="{{ url_for('main.profile', username=message.users[0].username) }}">
+                    {{ message.users[0].username }}
+                </a>
+                <i>{{ moment(message.send_time).format('LLL') }}</i>
+            <br><br>
+            <span id="message{{ message.id }}">{{ message.body }}</span>
+                <span id="translation{{ message.id }}">
+                    <a href="javascript:translate(
+                                '#message{{ message.id }}',
+                                '#translation{{ message.id }}',
+                                '{{ current_user.language }}');">Translate</a>
+                </span>
+        </td>
+    </tr>
+</table>
